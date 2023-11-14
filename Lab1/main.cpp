@@ -61,6 +61,9 @@ int main() {
         );
 
         device = devices[0];
+        char deviceName[128];
+        clGetDeviceInfo(device, CL_DEVICE_NAME, 128, deviceName, nullptr);
+        printf("%s\n", deviceName);
     }
 
     cl_command_queue queue = clCreateCommandQueueWithProperties(
